@@ -6,12 +6,12 @@ Benchmarking computational methods for B cell receptor reconstruction from singl
 
 
 
-[Fig 2](https://github.com/tAndreani/scBCR/blob/main/Scripts/Plot_Sensitivity.r)
+[Fig 2 on Real Data: Canzar, Updahyay and the Dataset Provided in This Work](https://github.com/tAndreani/scBCR/blob/main/Scripts/Plot_Sensitivity.r)
 
-[Fig 3](https://github.com/tAndreani/scBCR/blob/main/Scripts/PLOT_accuracy_SHMs.r)
+[Fig 3 on Simulated data: 4 datasets with different amount of somatic hypermutation (from 15 to 60) in the variable domain](https://github.com/tAndreani/scBCR/blob/main/Scripts/PLOT_accuracy_SHMs.r)
 
-[Fig 5](https://github.com/tAndreani/scBCR/blob/main/Scripts/Plot_Time.r)
+[Fig 5 Time of execution for each method in the Dataset Provided in This Work](https://github.com/tAndreani/scBCR/blob/main/Scripts/Plot_Time.r)
 
-[Fig 6](https://github.com/tAndreani/scBCR/blob/main/Scripts/Plot_Time.r)
+[Fig 6 Heatmap showing the performance of each tool on the different datasets](https://github.com/tAndreani/scBCR/blob/main/Scripts/Plot_Time.r)
 
 
