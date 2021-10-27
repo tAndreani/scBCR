@@ -11,7 +11,7 @@ sim_repertoire_IGH_shm15 <- immuneSIM(number_of_seqs = 100,
                                         shm.mode="data",
                                         shm.prob=15/350)
                      
-write.table(mm_igh_15_mutations,"igh_shm15.tsv",quote=F,col.names=T,row.names=F,sep="\t")
+write.table(sim_repertoire_IGH_shm15,"igh_shm15.tsv",quote=F,col.names=T,row.names=F,sep="\t")
 
 
 sim_repertoire_IGH_shm30 <- immuneSIM(number_of_seqs = 100,
@@ -21,7 +21,7 @@ sim_repertoire_IGH_shm30 <- immuneSIM(number_of_seqs = 100,
                                         shm.mode="data",
                                         shm.prob=30/350)
                      
-write.table(mm_igh_15_mutations,"igh_shm30.tsv",quote=F,col.names=T,row.names=F,sep="\t")
+write.table(sim_repertoire_IGH_shm30,"igh_shm30.tsv",quote=F,col.names=T,row.names=F,sep="\t")
 
 sim_repertoire_IGH_shm45 <- immuneSIM(number_of_seqs = 100,
                                         species = "hs",
@@ -30,7 +30,7 @@ sim_repertoire_IGH_shm45 <- immuneSIM(number_of_seqs = 100,
                                         shm.mode="data",
                                         shm.prob=45/350)
                      
-write.table(mm_igh_15_mutations,"igh_shm45.tsv",quote=F,col.names=T,row.names=F,sep="\t")
+write.table(sim_repertoire_IGH_shm45,"igh_shm45.tsv",quote=F,col.names=T,row.names=F,sep="\t")
 
 sim_repertoire_IGH_shm60 <- immuneSIM(number_of_seqs = 100,
                                         species = "hs",
@@ -39,5 +39,5 @@ sim_repertoire_IGH_shm60 <- immuneSIM(number_of_seqs = 100,
                                         shm.mode="data",
                                         shm.prob=60/350)
                      
-write.table(mm_igh_15_mutations,"igh_shm60.tsv",quote=F,col.names=T,row.names=F,sep="\t")
+write.table(sim_repertoire_IGH_shm60,"igh_shm60.tsv",quote=F,col.names=T,row.names=F,sep="\t")
 q()
