@@ -12,6 +12,6 @@ Benchmarking computational methods for B cell receptor reconstruction from singl
 
 [Fig 5 Time of execution for each method in the Dataset Provided in This Work](https://github.com/tAndreani/scBCR/blob/main/Scripts/Plot_Time.r)
 
-[Fig 6 Heatmap showing the performance of each tool on the different datasets](https://github.com/tAndreani/scBCR/blob/main/Scripts/Plot_Time.r)
+[Fig 6 Heatmap showing the performance of each tool on the different datasets](https://github.com/tAndreani/scBCR/blob/main/Scripts/HeatMap_All_Tools_Evaluation.r)
 
 
