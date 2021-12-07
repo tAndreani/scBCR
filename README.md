@@ -1,5 +1,5 @@
 # scBCR Benchmarking
-Benchmarking computational methods for B cell receptor reconstruction from single cell RNA-seq data. This repository is an extension of [ScBCR](https://gitlab.com/tAndreani/scBCR), a platform with all the methods currently available and ready to be installed and used to reconstruct paired haeavy and light chain in individual B cells.  
+Benchmarking computational methods for B cell receptor reconstruction from single cell RNA-seq data. This repository is an extension of [scBCR](https://gitlab.com/tAndreani/scBCR), a platform with all the methods currently available and ready to be installed and used to reconstruct paired haeavy and light chain in individual B cells.  
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/6462162/140508477-14d557c1-ea16-4687-a71e-7581c4692d7b.PNG" alt="Image" width="800" height="550" style="display: block; margin: 0 auto" />
