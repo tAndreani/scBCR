@@ -37,7 +37,7 @@ sensitivity$Sensitivity <- (sensitivity$Sensitivity)*100
 
 
 
-sensitivity_this_work <- subset(sensitivity, Dataset == "This_Work")
+sensitivity_this_work <- subset(sensitivity, Dataset == "Leiden")
 sensitivity_Canzar <- subset(sensitivity, Dataset == "Canzar_2016")
 sensitivity_Upadhyay <- subset(sensitivity, Dataset == "Upadhyay_2018")
 
@@ -83,7 +83,7 @@ p6 <- p5 +
   theme(axis.text.x=element_text(angle = 90, vjust = 0.5))+ylim(c(10,100))+ggtitle(label="Performance tools on heavy and light chains on our Dataset")+theme(plot.title = element_text(hjust = 0.5))+theme(text=element_text(size=15))
 
 p6 +theme(axis.text=element_text(size=14),
-          axis.title=element_text(size=14,face="bold"))+  theme(plot.title = element_text(hjust = 0.5))+theme(axis.text=element_text(size=14),axis.title=element_text(size=14,face="bold"))+ggtitle("Our Dataset")+ xlab("Methods") + ylab("% Assembled") +theme(text=element_text(size=15))
+          axis.title=element_text(size=14,face="bold"))+  theme(plot.title = element_text(hjust = 0.5))+theme(axis.text=element_text(size=14),axis.title=element_text(size=14,face="bold"))+ggtitle("Leiden Dataset")+ xlab("Methods") + ylab("% Assembled") +theme(text=element_text(size=15))
 
 
 ##########
