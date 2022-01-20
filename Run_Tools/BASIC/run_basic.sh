@@ -10,8 +10,8 @@
 #SBATCH --mail-user=Tommaso.Andreani@sanofi.com  # email
 #SBATCH --mail-type=ALL                          # type notification
 
-files="/site/ne/home/i0439277/TRUST4/Pilot1/mapping2"
-output="/site/ne/home/i0439277/basic/benchmark/pilot1_TT_plus_Linda"
+files="/path/input_fastq/"
+output="/path/output/"
 
 mkdir $output/$fastq;
 mkdir $output/$fastq.tmp;
