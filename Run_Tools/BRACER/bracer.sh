@@ -24,4 +24,3 @@ files="/path_to_files/"
 start=$SECONDS
 
 python /path/bracer assemble -p 2 -c /path/bracer.conf -s Hsap $fastq $files/ $fastq.R1.gz $fastq.R2.gz
-
