@@ -11,9 +11,6 @@
 #SBATCH --mail-user=Tommaso.Andreani@sanofi.com  # email
 #SBATCH --mail-type=ALL                          # type notification
 
-#####module load bracer
-
-module load bracer/1.0
 
 
 export fastq=`sed -n "$SGE_TASK_ID"p files.txt`
