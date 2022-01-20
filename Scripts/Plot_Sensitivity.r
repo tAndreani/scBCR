@@ -4,10 +4,9 @@ library(tidyr)
 library(dplyr)
 library(RColorBrewer)
 
-#theme_get()$text
-#X11Fonts()
 
-sensitivity <- read.table("/root/cloud-data/snf-mgln-dds/AIDA/Bioinformatics/i0439277/RTcure/Benchmark/plot_results/BALDR_BASIC_LEIDEN.txt",header=T,sep="\t")
+#input file is within this folder
+sensitivity <- read.table("BALDR_BASIC_LEIDEN.txt",header=T,sep="\t")
 head(sensitivity)
 
 colnames(sensitivity)[2] <- "newname2"
