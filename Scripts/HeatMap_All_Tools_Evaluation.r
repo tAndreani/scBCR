@@ -1,8 +1,8 @@
 getwd()
-setwd("/cloud-data/snf-mgln-dds/AIDA/Bioinformatics/i0439277/RTcure/Benchmark/Script_Submission")
-#install.packages("viridis")
 library(viridis)
 
+
+#input file is within this folder
 a <- read.table("Final_Ensembled_Average.tsv",header = T, sep="\t")
 a
 a$Dataset <- factor(a$Dataset, levels=c("Leiden","Canzar", "Upadhyay", "SHMs","Average"))
