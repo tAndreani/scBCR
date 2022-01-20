@@ -1,9 +1,9 @@
-setwd("/cloud-data/snf-mgln-dds/AIDA/Bioinformatics/i0439277/RTcure/Benchmark/Pilot1_Sanger_TT/plot_time_execution/")
 library(ggplot2)
 library(tidyr)
 library(plyr)
 library(ggplot2)
 
+#input file is within this folder
 time_exec <- read.table("Time_Execution_Methods_TT_plus_Linda.txt",header=T)
 #names(time_exec)[8] <- "cov1mln.250k"
 long_df <- time_exec
