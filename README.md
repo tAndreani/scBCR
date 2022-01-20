@@ -13,7 +13,7 @@ of BCRs on the performance of each method. Sensitivity and accuracy were used as
 
 [Fig 3 on Simulated data: 4 datasets with different amount of somatic hypermutations (from 15 to 60)](https://github.com/tAndreani/scBCR/blob/main/Scripts/PLOT_accuracy_SHMs.r)
 
-[Fig 5 Time of execution for each method in the Dataset Provided in This Work](https://github.com/tAndreani/scBCR/blob/main/Scripts/Plot_Time.r)
+[Fig 5 Time of execution for each method in the Leiden dataset](https://github.com/tAndreani/scBCR/blob/main/Scripts/Plot_Time.r)
 
 [Fig 6 Heatmap showing the performance of each tool on the different datasets](https://github.com/tAndreani/scBCR/blob/main/Scripts/HeatMap_All_Tools_Evaluation.r)
 
