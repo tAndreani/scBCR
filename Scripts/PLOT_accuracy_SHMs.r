@@ -4,7 +4,8 @@ library(tidyr)
 library(dplyr)
 library("RColorBrewer")
 
-accuracy <- read.table("/root/cloud-data/snf-mgln-dds/AIDA/Bioinformatics/i0439277/RTcure/Benchmark/simulation_mutations/statistical_analysis_corrected/plot/Master_Table_shm.tsv",header=T,sep="\t")
+#input file is within this folder
+accuracy <- read.table("Master_Table_shm.tsv",header=T,sep="\t")
 head(accuracy)
 colnames(accuracy)[1] <- "SHMs"
 accuracy$SHMs <- factor(accuracy$SHMs, levels=c("SHM15", "SHM30", "SHM45", "SHM60"))
