@@ -4,7 +4,7 @@ Benchmarking computational methods for B cell receptor reconstruction from singl
 <p align="center">
 <img src="https://user-images.githubusercontent.com/6462162/150326571-4ac5952c-b291-4a5d-9e9a-1a35110b51da.PNG" alt="Image" width="800" height="550" style="display: block; margin: 0 auto" />
   
-**Benchmark framework**: **(A)** Available datasets with ground truth (Canzar et al. 2017, 
+**Fig 1 Benchmark framework**: **(A)** Available datasets with ground truth (Canzar et al. 2017, 
 Upadhyay et al. 2018) consisting of plasmablasts with unknown antigen specificity were obtained from the corresponding publications. In addition, a scRNAseq dataset including tetanus toxoid-specific B-cells and B-cells with unknown antigen specificity was generated in this work (Leiden). All the datasets were downsampled to achieve different read coverage and length. **(B)** An additional dataset was simulated to investigate the effects of different levels of somatic hypermutations in the variable domains 
 of BCRs on the performance of each method. Sensitivity and accuracy were used as metrics to evaluate each method depending on the type of used data. Antibodies were produced using a subset of clonotype-forming patient-specific BCRs and their specificity was experimentally validated. Finally, the execution time was investigated, and a final score was calculated to give a final recommendation on the method choice.  
 
