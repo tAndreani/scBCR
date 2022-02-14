@@ -1,21 +1,16 @@
+#!/bin/sh
+#SBATCH --job-name=BCR_Reconstruction      # job name
+#SBATCH --array=1-48                       # Number of Job (according to the number of splitted files in the exported variables)
+#SBATCH --nodes=2                          # nodes
+#SBATCH -c 2                               # cores
+#SBATCH --mem=6G                           # memory
+#SBATCH --time=72:00:00                    # time
+#SBATCH --error=BCR_TCR.err                # error file name
+#SBATCH --output=BCR_TCR.out               # output file name
+#SBATCH --mail-user=Tommaso.Andreani@sanofi.com  # email
+#SBATCH --mail-type=ALL                          # type notification
 
-#!/bin/bash
-
-#$ -S /bin/bash                                    # you can overwrite the shell to use csh or sh
-#$ -N baldr_data_50bp_50k                               # name of your job
-#$ -j y                                            # merge standard output and error into a file
-#$ -m bea                                          # alert when the job begins, ends and abort
-#$ -l mem_total=6G                                 # looking for a server with at least 48G RAM free
-#$ -pe threaded 2                                  # asks for a server with at least 6 cores available and reserve 6 cores for your job to run
-#$ -q c32.q                                        # asks for the job to run in the all.q queue
-#$ -b y                                            # run binary on a node
-#$ -cwd                                            # using current working directory
-#$ -t 1-49:1
-
-. /etc/profile.d/00-site.sh                        # load profile into your shell
-. /etc/profile.d/modules.sh                        # load module profile into your shell in order to use module command as below
-
-export fastq=`sed -n "$SGE_TASK_ID"p files_pe.txt`
+export fastq=`sed -n "$SGE_TASK_ID"p files.
 
 module load star/2.5.2b                            # load star software into your job environment
 module load baldr/1.0
