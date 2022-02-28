@@ -12,7 +12,7 @@
 
 
 
-export fastq=`sed -n "$SGE_TASK_ID"p files.txt`
+export fastq=`sed -n "$SLURM_ARRAY_TASK_ID"p files.txt`
 
 
 files="/path/files/input"
