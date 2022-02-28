@@ -13,7 +13,7 @@
 
 
 
-export fastq=`sed -n "$SGE_TASK_ID"p files.txt`
+export fastq=`sed -n "$SLURM_ARRAY_TASK_ID"p files.txt`
 
 ##paired end
 files="/path_to_files/"
