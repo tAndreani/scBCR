@@ -1,4 +1,12 @@
 
 Link to the GEO repo:
 
+Leiden Dataset Tetanus Antigen Specific and Memory B cells with unkown antigen specificity:
 https://dataview.ncbi.nlm.nih.gov/object/PRJNA783770?reviewer=4roc8i2si3hfao2q7lv4hovaec
+
+BALDR dataset plasmablast cells:
+https://www.ncbi.nlm.nih.gov/sra/?term=SRP126429 
+Human AW1, 51/86
+
+BASIC dataset plasmablast cells:
+https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE116500
