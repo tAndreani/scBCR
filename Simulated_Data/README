@@ -1,0 +1,2 @@
+The simulated Heavy and Light chains in fasta format with different degrees of somatic hypermutations were obtained from immuneSIM (https://immunesim.readthedocs.io/en/latest/).
+The fasta sequences were used as a reference to obtain illumina libraries using ART (https://www.niehs.nih.gov/research/resources/software/biostatistics/art/index.cfm).
