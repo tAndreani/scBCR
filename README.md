@@ -16,7 +16,7 @@ of BCRs on the performance of each method. Sensitivity and accuracy were used as
 [Fig 5 Time of execution for each method in the Leiden dataset](https://github.com/tAndreani/scBCR/blob/main/Scripts/Plot_Time.r)
 
 <p align="center"><img src="Images/Fig.6-A.PNG" alt="Image" width="600" height="450">
-<p align="center"><img src="Images/Fig.6-B.PNG" alt="Image" width="600" height="450">
+<p align="center"><img src="Images/Fig.6-B.PNG" alt="Image" width="700" height="450">
 
 [Fig 6 Heatmap and decision tree to evaluate the performance of each method and reccomendation on different datasets](https://github.com/tAndreani/scBCR/blob/main/Scripts/HeatMap_All_Tools_Evaluation.r)
   
