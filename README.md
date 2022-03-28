@@ -18,7 +18,7 @@ of BCRs on the performance of each method. Sensitivity and accuracy were used as
 <p align="center"><img src="Images/Fig.6-A.PNG" alt="Image" width="600" height="450">
 <p align="center"><img src="Images/Fig.6-B.PNG" alt="Image" width="700" height="450">
 
-[Fig 6 Heatmap and decision tree to evaluate the performance of each method and reccomendation on different datasets](https://github.com/tAndreani/scBCR/blob/main/Scripts/HeatMap_All_Tools_Evaluation.r)
+[Fig 6 Heatmap and decision tree to evaluate the performance of each method and recommendation on different datasets](https://github.com/tAndreani/scBCR/blob/main/Scripts/HeatMap_All_Tools_Evaluation.r)
   
   
 ##### Credits: Tommaso Andreani, Linda Slot, Samuel Gabillard, Carsten Struebing, Claus Reimertz, Yaligara Veeranagouda, Aleida Bakker, Reza Olfati-Saber, Rene E. M. Toes, Franck Auge, Deimante Simaite.  [Benchmarking computational methods for B-cell receptor reconstruction from single-cell RNA-seq data](https://www.biorxiv.org/content/10.1101/2022.03.24.485600v1).
