@@ -2,7 +2,7 @@
 Benchmarking computational methods for B cell receptor reconstruction from single cell RNA-seq data. This repository is an extension of [scBCR](https://gitlab.com/tAndreani/scBCR), a platform with all the methods currently available and ready to be installed and used to reconstruct paired haeavy and light chain in individual B cells.  
 
   
-##### Credits: Tommaso Andreani, Linda Slot, Samuel Gabillard, Carsten Struebing, Claus Reimertz, Yaligara Veeranagouda, Aleida Bakker, Reza Olfati-Saber, Rene E. M. Toes, Franck Auge, Deimante Simaite.  [Benchmarking computational methods for B-cell receptor reconstruction from single-cell RNA-seq data](https://www.biorxiv.org/content/10.1101/2022.03.24.485600v1) in _bioRxiv_.
+##### Credits: Tommaso Andreani, Linda Slot, Samuel Gabillard, Carsten Struebing, Claus Reimertz, Yaligara Veeranagouda, Aleida Bakker, Reza Olfati-Saber, Rene E. M. Toes, Franck Auge´, Deimante Simaite.  [Benchmarking computational methods for B-cell receptor reconstruction from single-cell RNA-seq data](https://www.biorxiv.org/content/10.1101/2022.03.24.485600v1) in _bioRxiv_.
 
 
 
