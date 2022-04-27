@@ -13,7 +13,7 @@ of BCRs on the performance of each method. Sensitivity and accuracy were used as
 
 [Fig 3 Overlap of genes from BCR reconstructed on experimental data: Leiden, Canzar, Updahyay](https://github.com/tAndreani/scBCR/blob/main/Scripts/Overlap_Genes/Figure_3_Lower_Heatmap.r)  
   
-[Fig 5 Performance methods on simulated data: 4 datasets with different amount of somatic hypermutations (from 15 to 60)](https://github.com/tAndreani/scBCR/blob/main/Scripts/PLOT_accuracy_SHMs.r)
+[Fig 4 Performance methods on simulated data: 4 datasets with different amount of somatic hypermutations (from 15 to 60)](https://github.com/tAndreani/scBCR/blob/main/Scripts/PLOT_accuracy_SHMs.r)
 
 [Fig 6 Time of execution for each method in the Leiden dataset](https://github.com/tAndreani/scBCR/blob/main/Scripts/Plot_Time.r)
 
