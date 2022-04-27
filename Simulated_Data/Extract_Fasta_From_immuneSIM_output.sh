@@ -1,5 +1,5 @@
 #### Author: Tommaso Andreani
-#### What this script does: It takes in input the immuneSIM output for a particular chain simulated (Heavy or Light) and output a fasta file for each of the sequences simulated
+#### What this script does: It takes in input the immuneSIM output for a particular number of chains simulated (Heavy or Light - in our case 100) and output a fasta file for each of the sequences simulated.
 #### Application: each fasta file will be used as a reference for ART tool which will create Illumina Libraries for each of the sample. Art script can be found in this folder.
 
 
