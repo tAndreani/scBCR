@@ -1,4 +1,4 @@
-To corroborate the performance of each method using the sensitivity as a metric an overlap of the genes among the tools during the BCR reconstruction has been performend. 
+To corroborate the performance of each method using the sensitivity as a metric with a ground truth based on Sanger sequences, an overlap of the genes among the tools during the BCR reconstruction has been performend. 
 In Supplementary_Table6 it is possible to find all the genes overlapped. Here I upload the matrices to make the triangular heatmap using the script in the folder.
 
 
