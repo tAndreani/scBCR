@@ -1,10 +1,12 @@
+##Reproduction of Figure 3 Manuscript
+
 rm(list=ls())
 library(reshape2)
 library(viridis)
 library(ggplot2)
 
-#example for HC - J genes (you can change for any gene type)
-#install.packages("reshape2")
+#example for HC - J genes in Canzar dataset (you can change for any gene type)
+
 matrix <- read.table("Canzar/HC_J.txt")
 matrix <- as.matrix(matrix)
 melted_cormat <- melt(matrix)
