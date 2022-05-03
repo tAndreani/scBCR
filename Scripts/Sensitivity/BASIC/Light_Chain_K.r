@@ -1,6 +1,5 @@
 #Load Ground Truth data Light Chain data
 rm(list = ls())
-setwd("/root/cloud-data/snf-mgln-dds/AIDA/Bioinformatics/i0439277/RTcure/Benchmark/Basic_data/ground_truth/cocktail")
 KC <- read.table("KC.txt",header=T)
 head(KC)
 dim(KC)
