@@ -16,17 +16,17 @@ dim(HC_no_single_end)
 test_HC_no_single_end <- HC_no_single_end %>% separate(sequence_id, c("A","B","C"))
 test_HC_no_single_end <- test_HC_no_single_end %>% unite("Id", A:B, remove = TRUE)
 Ground_Truth <- subset(test_HC_no_single_end, select = c(1,3,4,5,6))
-head(Ground_Truth)
-dim(Ground_Truth)
+
+#count
 tot_chains_productive <- Ground_Truth[ which( Ground_Truth$productive == "TRUE" ),]
 length(tot_chains_productive$Id)
 percentage_productive <- length(tot_chains_productive$Id)/length(Ground_Truth$Id)
 print(percentage_productive)
 
-#Load Basic Data
+#Load Basic Data output from a given tool
 #coverage 50bp and 1mln.250k
 
-setwd("/path/to/annoated_fasta_sequence_of_HC_obtained_with_immcantation/")
+setwd("/path/to/annoated_fasta_sequence_of_HC_obtained_with_immcantation_from_a_tool/")
 dataset_LC_L002 <- read.table("Results_IGH_rank_all_no_empy_lines_L002.tsv",sep="\t",header=F)
 dataset_LC_L002_subset <- subset(dataset_LC_L002, dataset_LC_L002$V2 == 1)
 
