@@ -19,7 +19,7 @@ head(Ground_Truth_light_chain_K)
 
 #Load Basic Data
 #coverage 1mln & 250k
-dataset_LC_L002 <- read.table("IGKL.txt",sep="\t",header=F)
+dataset_LC_L002 <- read.table("Results_IGKL_from_BALDR.tsv",sep="\t",header=F)
 dataset_LC_L002_IGL_Productive <- subset(dataset_LC_L002,V50=="VK" & V4==1)
 dataset_LC_L002_subset <- subset(dataset_LC_L002_IGL_Productive, select = c(1,53,48,49))
 head(dataset_LC_L002_subset)
