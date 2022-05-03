@@ -1,7 +1,7 @@
 In this folder I have uploaded the scripts to calculate the sensitivity for HC and LC(K/L). You can find the input files that are used to run the scripts.
 These files are:
-1) HC ground truth annotated using immcantation;
-2) LC(K/L) ground truth annotated using immcantation;
+1) HC ground truth annotated using immcantation and parsed only for the productivity, V, D, J;
+2) LC(K/L) ground truth annotated using immcantation and parsed for the productivity, V, J and the chain type;
 3) Output from the reconstruction of HC and LC(K/L) from one tool named BALDR;
 
 The script can be adapted from other tools.
