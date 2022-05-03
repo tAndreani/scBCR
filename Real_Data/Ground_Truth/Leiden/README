@@ -1,1 +1,14 @@
-Ground Truth of the Dataset Leiden created for the study. When online will be on Supplementary_Table_3
+Ground Truth of the Dataset Leiden created for the study. When online will be on Supplementary_Table_3.
+Column information:
+
+a) Id
+b) Productive
+c) V-gene
+d) D-gene
+e) J-gene
+f) Chain
+g) CDR3_Sequence
+h) CDR3_aminoacid
+i) Cell Type
+l) Fasta
+
