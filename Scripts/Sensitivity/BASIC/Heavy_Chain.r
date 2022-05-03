@@ -28,6 +28,8 @@ print(percentage_productive)
 
 setwd("/path/to/annoated_fasta_sequence_of_HC_obtained_with_immcantation_from_a_tool/")
 dataset_LC_L002 <- read.table("Results_IGH_rank_all_no_empy_lines_L002.tsv",sep="\t",header=F)
+
+#Take only the reconstructed
 dataset_LC_L002_subset <- subset(dataset_LC_L002, dataset_LC_L002$V2 == 1)
 
 ###count number of Heavy Chain and how many are productive
