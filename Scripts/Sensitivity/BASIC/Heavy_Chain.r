@@ -30,7 +30,7 @@ setwd("/path/to/annoated_fasta_sequence_of_HC_obtained_with_immcantation_from_a_
 dataset_LC_L002 <- read.table("Results_IGH_rank_all_no_empy_lines_L002.tsv",sep="\t",header=F)
 dataset_LC_L002_subset <- subset(dataset_LC_L002, dataset_LC_L002$V2 == 1)
 
-###count number of Light Chain L and how many are productive
+###count number of Heavy Chain and how many are productive
 dataset_LC_L002_subset_productive <- subset(dataset_LC_L002_subset, dataset_LC_L002_subset$V3 == "Yes")
 print(paste0("Number Heavy Chain reconstructed   ",length(dataset_LC_L002_subset$V1)))
 print(paste0("Number Heavy Chain reconstructed productive   ",length(dataset_LC_L002_subset_productive$V1)))
