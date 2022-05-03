@@ -24,7 +24,7 @@ dataset_LC_L002_IGL_Productive <- subset(dataset_LC_L002,V50=="VK" & V4==1)
 dataset_LC_L002_subset <- subset(dataset_LC_L002_IGL_Productive, select = c(1,53,48,49))
 head(dataset_LC_L002_subset)
 dim(dataset_LC_L002_subset)
-###count number of Light Chain L and how many are productive
+###count number of Light Chain Kappa and how many are productive
 dataset_LC_L002_subset_productive <- subset(dataset_LC_L002_subset, V53 == "Yes")
 length(dataset_LC_L002_subset_productive$V1)/length(dataset_LC_L002_subset$V1)
 dataset_LC_L002_subset_productive_L <- subset(dataset_LC_L002_subset_productive, select = c(1,2,3,4))
@@ -37,7 +37,7 @@ test_LC_L002_subset <- test %>% unite("Id", A:B, remove = TRUE)
 dim(test_LC_L002_subset)
 A <- intersect(as.character(Ground_Truth_light_chain_K$Id),as.character(test_LC_L002_subset$Id))
 length(A)
-print(paste0("Number Light Chain Lambda Reconstructed ",length(A)))
+print(paste0("Number Light Chain Kappa Reconstructed ",length(A)))
 LC_L002_BASIC_1mln_250L <- subset(test_LC_L002_subset, select = c(1,5,6,7))
 
 LC_L002_BASIC_1mln_250L_productive_in_ground_truth <- LC_L002_BASIC_1mln_250L[ grepl(paste(Ground_Truth_light_chain_K$Id, collapse="|"), LC_L002_BASIC_1mln_250L$Id),]
@@ -87,7 +87,7 @@ head(v_genes)
 
 
 ####################################################################
-#Perform the match considering multiple genes in the output of the tool or the sanger for every V-D-J
+#Perform the match considering multiple genes in the output of the tool or the sanger for every V-J
 ###################################################################################
 
 #Match J genes
