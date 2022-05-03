@@ -2,7 +2,6 @@ rm(list = ls())
 library(dplyr)
 library(tidyr)
 library(stringr)
-setwd("/root/cloud-data/snf-mgln-dds/AIDA/Bioinformatics/i0439277/RTcure/Benchmark/Basic_data/ground_truth/cocktail")
 
 #Load Ground Truth data Heavy Chain
 HC <- read.table("HC.txt",header=T)
@@ -27,7 +26,7 @@ print(percentage_productive)
 #Load Basic Data
 #coverage 50bp and 1mln.250k
 
-setwd("/root/cloud-data/snf-mgln-dds/AIDA/Bioinformatics/i0439277/RTcure/Benchmark/Basic_data/baldr/paired_end/run_50cov")
+setwd("/path/to/annoated_fasta_sequence_of_HC_obtained_with_immcantation/")
 dataset_LC_L002 <- read.table("Results_IGH_rank_all_no_empy_lines_L002.tsv",sep="\t",header=F)
 dataset_LC_L002_subset <- subset(dataset_LC_L002, dataset_LC_L002$V2 == 1)
 
