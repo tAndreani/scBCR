@@ -9,45 +9,52 @@ KC_no_single_end <- KC[ !grepl(paste(single_end_KC, collapse="|"), KC$sequence_i
 test_KC_no_single_end <- KC_no_single_end %>% separate(sequence_id, c("A","B","C"))
 test_KC_no_single_end <- test_KC_no_single_end %>% unite("Id", A:B, remove = TRUE)
 Ground_Truth_light_chain_K <- subset(test_KC_no_single_end, select = c(1,3,4,5,6))
+dim(Ground_Truth_light_chain_K)
 Ground_Truth_Productive <- subset(Ground_Truth_light_chain_K,productive=="TRUE")
-
+dim(Ground_Truth_Productive)
 print(length(Ground_Truth_light_chain_K$Id))
 print(length(Ground_Truth_Productive$Id)/length(Ground_Truth_light_chain_K$Id))
-
+dim(Ground_Truth_light_chain_K)
+head(Ground_Truth_light_chain_K)
 
 #Load Basic Data
 #coverage 1mln & 250k
-setwd("/root/cloud-data/snf-mgln-dds/AIDA/Bioinformatics/i0439277/RTcure/Benchmark/Basic_data/basic/paired_end/BASIC/25bp/500k_coverage/test/tsv_files/LC/L002")
-file_list <- list.files()
-dataset_LC_L002 <- do.call("rbind",lapply(file_list,
-                                          FUN=function(files){read.table(files,
-                                                                         header=TRUE, sep="\t")}))
-length(file_list)
-head(dataset_LC_L002)
-
-###count number of Light Chain K and how many are productive
-dataset_LC_L002_subset <- subset(dataset_LC_L002, locus == "IGK")
+dataset_LC_L002 <- read.table("IGKL.txt",sep="\t",header=F)
+dataset_LC_L002_IGL_Productive <- subset(dataset_LC_L002,V50=="VK" & V4==1)
+dataset_LC_L002_subset <- subset(dataset_LC_L002_IGL_Productive, select = c(1,53,48,49))
+head(dataset_LC_L002_subset)
 dim(dataset_LC_L002_subset)
-dataset_LC_L002_subset_productive <- subset(dataset_LC_L002_subset, productive == "TRUE")
-dim(dataset_LC_L002_subset_productive)
-dataset_LC_L002_subset_productive_k <- subset(dataset_LC_L002_subset_productive, select = c(1,4,5,6,7))
-length(dataset_LC_L002_subset$sequence_id)/length(dataset_LC_L002_subset_productive$sequence_id)
-
+###count number of Light Chain L and how many are productive
+dataset_LC_L002_subset_productive <- subset(dataset_LC_L002_subset, V53 == "Yes")
+length(dataset_LC_L002_subset_productive$V1)/length(dataset_LC_L002_subset$V1)
+dataset_LC_L002_subset_productive_L <- subset(dataset_LC_L002_subset_productive, select = c(1,2,3,4))
+head(dataset_LC_L002_subset_productive_L)
 
 ##Parse the name and subset the chains that are both in ground truth and assembled
-test <- dataset_LC_L002_subset_productive_k %>% separate(sequence_id, c("A","B","C","D","E"))
-test_LC_L002_subset <- test %>% unite("Id", C:D, remove = TRUE)
-LC_L002_BASIC_1mln_250k <- subset(test_LC_L002_subset, select = c(3,5,6,7,8))
-head(LC_L002_BASIC_1mln_250k)
-dim(LC_L002_BASIC_1mln_250k)
-LC_L002_BASIC_1mln_250k_productive_in_ground_truth <- LC_L002_BASIC_1mln_250k[ grepl(paste(Ground_Truth_light_chain_K$Id, collapse="|"), LC_L002_BASIC_1mln_250k$Id),]
-head(LC_L002_BASIC_1mln_250k_productive_in_ground_truth)
+test <- dataset_LC_L002_subset_productive_L %>% separate(V1, c("A","B","C","D","E"))
+head(test)
+test_LC_L002_subset <- test %>% unite("Id", A:B, remove = TRUE)
+dim(test_LC_L002_subset)
+A <- intersect(as.character(Ground_Truth_light_chain_K$Id),as.character(test_LC_L002_subset$Id))
+length(A)
+print(paste0("Number Light Chain Lambda Reconstructed ",length(A)))
+LC_L002_BASIC_1mln_250L <- subset(test_LC_L002_subset, select = c(1,5,6,7))
+
+LC_L002_BASIC_1mln_250L_productive_in_ground_truth <- LC_L002_BASIC_1mln_250L[ grepl(paste(Ground_Truth_light_chain_K$Id, collapse="|"), LC_L002_BASIC_1mln_250L$Id),]
+head(LC_L002_BASIC_1mln_250L_productive_in_ground_truth)
+
+#Rename the columns of the files
+names(LC_L002_BASIC_1mln_250L_productive_in_ground_truth)[names(LC_L002_BASIC_1mln_250L_productive_in_ground_truth) == "V53"] <- "productive"
+names(LC_L002_BASIC_1mln_250L_productive_in_ground_truth)[names(LC_L002_BASIC_1mln_250L_productive_in_ground_truth) == "V48"] <- "v_call"
+names(LC_L002_BASIC_1mln_250L_productive_in_ground_truth)[names(LC_L002_BASIC_1mln_250L_productive_in_ground_truth) == "V49"] <- "j_call"
+LC_L002_BASIC_1mln_250L_productive_in_ground_truth$productive <- gsub("Yes","TRUE",LC_L002_BASIC_1mln_250L_productive_in_ground_truth$productive)
+head(LC_L002_BASIC_1mln_250L_productive_in_ground_truth)
 
 #Join Table basic 1mlnk 100bp
-joined_tables_all_basic <- full_join(LC_L002_BASIC_1mln_250k_productive_in_ground_truth,Ground_Truth_light_chain_K,by = c("Id"),copy = TRUE)
+joined_tables_all_basic <- full_join(LC_L002_BASIC_1mln_250L_productive_in_ground_truth,Ground_Truth_light_chain_K,by = c("Id"),copy = TRUE)
 joined_tables_all_basic_in_ground_truth <- subset(joined_tables_all_basic, joined_tables_all_basic$productive.y == "TRUE" | joined_tables_all_basic$productive.y == "FALSE")
 dim(joined_tables_all_basic_in_ground_truth)
-
+joined_tables_all_basic_in_ground_truth
 #Perform the match
 #Match V genes
 v_genes <- joined_tables_all_basic %>% mutate(id = joined_tables_all_basic$Id) %>% 
@@ -129,7 +136,7 @@ j_genes_k <- subset(j_genes,Chain == "KC")
 head(j_genes_k)
 match_productivity <- j_genes_k$productive.x == j_genes_k$productive.y
 match_productivity$productivity.match <- match_productivity
-length(match_productivity)
+head(match_productivity)
 dim(j_genes_k)
 
 v_genes_k <- subset(v_genes,Chain == "KC")
@@ -143,10 +150,11 @@ joined_tables_all_basic_k <- subset(joined_tables_all_basic,Chain == "KC")
 head(joined_tables_all_basic_k)
 dim(joined_tables_all_basic_k)
 
-df <- as.data.frame(cbind(joined_tables_all_basic_k$Id,v_genes_k$v.gene.match,j_genes_k$j.gene.match))
-dim(df)
+df <- as.data.frame(cbind(joined_tables_all_basic_k$Id,v_genes_k$match,j_genes_k$match))
+head(df)
 productive_k <- length(df$V1)
 productive_k
+head(productive_k)
 list_lightk_id <- as.data.frame(Ground_Truth_light_chain_K$Id)
 head(Ground_Truth_light_chain_K)
 dim(Ground_Truth_light_chain_K)
@@ -154,7 +162,7 @@ dim(Ground_Truth_light_chain_K)
 
 #select only the chains that were productive in the ground truth
 df_productive <- df[ grepl(paste(tot_chains_productive$Id, collapse="|"), df$V1),]
-dim(df_productive)
+head(df_productive)
 Id <- df_productive$V1
 df_productive$V1 <- as.character(df_productive$V1) 
 df_productive$V2 <- as.logical(df_productive$V2)
@@ -172,8 +180,8 @@ print(length(Accuracy$Id))
 
 
 
-print(paste0("Percentage Reconstructed Kappa  ",length(dataset_LC_L002_subset$sequence_id)))
-print(paste0("Percentage Light Chain Kappa Productive ",length(dataset_LC_L002_subset_productive$sequence_id)))      
-print(paste0("Percentage Productive in The Total Assembled  ",length(dataset_LC_L002_subset_productive$sequence_id)/length(dataset_LC_L002_subset$sequence_id)))
+print(paste0("Percentage Reconstructed Kappa  ",length(dataset_LC_L002_subset$V1)))
+print(paste0("Percentage Light Chain Kappa Productive ",length(dataset_LC_L002_subset_productive$V1)))      
+print(paste0("Percentage Productive in The Total Assembled  ",length(dataset_LC_L002_subset_productive$V1)/length(dataset_LC_L002_subset$V1)))
 print(paste0("Accuracy  " ,value_all_match/length(Accuracy$Id)))
 
