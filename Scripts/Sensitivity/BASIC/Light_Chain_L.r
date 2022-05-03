@@ -18,21 +18,17 @@ print(length(Ground_Truth_Productive$Id)/length(Ground_Truth_light_chain_L$Id))
 
 #Load Basic Data
 #coverage 1mln & 250L
-setwd("/root/cloud-data/snf-mgln-dds/AIDA/Bioinformatics/i0439277/RTcure/Benchmark/Basic_data/basic/paired_end/BASIC/25bp/500k_coverage/test/tsv_files/LC/L002/")
-file_list <- list.files()
-dataset_LC_L002 <- do.call("rbind",lapply(file_list,
-                                          FUN=function(files){read.table(files,
-                                                                         header=TRUE, sep="\t")}))
-
-###count number of Light Chain L and how many are productive
-dataset_LC_L002_subset <- subset(dataset_LC_L002, locus == "IGL")
-print(paste0("Number Light Chain Lambda  ",length(dataset_LC_L002_subset$sequence_id)))
-
-dataset_LC_L002_subset_productive <- subset(dataset_LC_L002_subset, productive == "TRUE")
-print(paste0("Number Light Chain Lambda Productive ",length(dataset_LC_L002_subset_productive$sequence_id)))
-
-length(dataset_LC_L002_subset_productive$sequence_id)/length(dataset_LC_L002_subset$sequence_id)
-dataset_LC_L002_subset_productive_L <- subset(dataset_LC_L002_subset_productive, select = c(1,4,5,6,7))
+#Load Basic Data
+#coverage 1mln & 250k
+dataset_LC_L002 <- read.table("Results_IGKL_from_BALDR.tsv",sep="\t",header=F)
+dataset_LC_L002_IGL_Productive <- subset(dataset_LC_L002,V50=="VL" & V4==1)
+dataset_LC_L002_subset <- subset(dataset_LC_L002_IGL_Productive, select = c(1,53,48,49))
+head(dataset_LC_L002_subset)
+dim(dataset_LC_L002_subset)
+###count number of Light Chain Kappa and how many are productive
+dataset_LC_L002_subset_productive <- subset(dataset_LC_L002_subset, V53 == "Yes")
+length(dataset_LC_L002_subset_productive$V1)/length(dataset_LC_L002_subset$V1)
+dataset_LC_L002_subset_productive_L <- subset(dataset_LC_L002_subset_productive, select = c(1,2,3,4))
 head(dataset_LC_L002_subset_productive_L)
 
 ##Parse the name and subset the chains that are both in ground truth and assembled
