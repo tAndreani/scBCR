@@ -188,18 +188,18 @@ df_productive$V4 <- as.logical(df_productive$V4)
 df_productive <- 1*df_productive[,2:4]
 head(df_productive)
 df_productive$sum <- rowSums(df_productive[,1:3])/3
-Accuracy <- cbind(Id,df_productive)
-Alll_Match <- subset(Accuracy, sum == 1)
+Sensitivity <- cbind(Id,df_productive)
+Alll_Match <- subset(Sensitivity, sum == 1)
 value_all_match <- length(Alll_Match$Id)
-Accuaracy_Value <- value_all_match/length(Accuracy$Id)
-print(Accuaracy_Value)
+Sensitivity_Value <- value_all_match/length(Sensitivity$Id)
+print(Sensitivity_Value)
 print(value_all_match)
-print(length(Accuracy$Id))
+print(length(Sensitivity$Id))
 
 
 print(paste0("Percentage Productive in The Ground Truth ", length(tot_chains_productive$Id)/length(Ground_Truth$Id)))
 print(paste0("Number Heavy Chain reconstructed   ",length(dataset_LC_L002_subset$V1)))
 print(paste0("Number Heavy Chain reconstructed productive   ",length(dataset_LC_L002_subset_productive$V1)))
-print(paste0("Accuracy  ", value_all_match/length(Accuracy$Id)))
+print(paste0("Sensitivity  ", value_all_match/length(Sensitivity$Id)))
 
 
